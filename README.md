@@ -6,16 +6,18 @@ Zoom.us API v2 client for PHP
 Add the following repository source to your composer.json:
 
 ```
-{
-      "type": "composer",
-      "url": "https://repository.usabilitydynamics.com"
-}
+"repositories": [
+      {
+            "type": "vcs",
+            "url": "https://github.com/vadimipatov/zoom-api-php-client"
+      }
+]
 ```
 
 Require via composer:
 
 ```
-composer require usabilitydynamics/zoom-api-php-client:0.0.3
+composer require usabilitydynamics/zoom-api-php-client
 ```
 
 Initialize:
