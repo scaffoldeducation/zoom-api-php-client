@@ -28,4 +28,14 @@ class Dashboards extends Request {
     public function listMeetings(array $query = []) {
         return $this->get("/metrics/meetings", $query);
     }
+
+    /**
+     * List webinars
+     *
+     * @param array $query
+     * @return array|mixed
+     */
+    public function listWebinars(array $query = []) {
+        return $this->get("/metrics/webinars", $query);
+    }
 }
