@@ -20,6 +20,11 @@ class Request {
     protected $apiSecret;
 
     /**
+     * @var
+     */
+    protected $token;
+
+    /**
      * @var Client
      */
     protected $client;
@@ -34,10 +39,12 @@ class Request {
      * @param $apiKey
      * @param $apiSecret
      */
-    public function __construct( $apiKey, $apiSecret ) {
+    public function __construct( $apiKey, $apiSecret, $token ) {
         $this->apiKey = $apiKey;
 
         $this->apiSecret = $apiSecret;
+
+        $this->token = $token;
 
         $this->client = new Client();
     }
@@ -49,7 +56,7 @@ class Request {
      */
     protected function headers(): array {
         return [
-            'Authorization' => 'Bearer ' . $this->generateJWT(),
+            'Authorization' => 'Bearer ' . $this->token ?: $this->generateJWT(),
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
         ];

@@ -15,8 +15,8 @@ class Recordings extends Request {
      * @param $apiKey
      * @param $apiSecret
      */
-    public function __construct($apiKey, $apiSecret) {
-        parent::__construct($apiKey, $apiSecret);
+    public function __construct($apiKey, $apiSecret, $token) {
+        parent::__construct($apiKey, $apiSecret, $token);
     }
 
     /**
