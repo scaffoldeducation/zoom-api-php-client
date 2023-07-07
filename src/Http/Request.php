@@ -56,7 +56,7 @@ class Request {
      */
     protected function headers(): array {
         return [
-            'Authorization' => 'Bearer ' . $this->token ?: $this->generateJWT(),
+            'Authorization' => 'Bearer ' . ($this->token ?: $this->generateJWT()),
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
         ];
